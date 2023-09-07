@@ -1,11 +1,11 @@
-# Binstore
+# Bustore
 
 An isomorphic asynchronous Map-inspired key-value store for persisting blobs.
 
 ## Install
 
 ```sh
-npm install --save binstore
+npm install --save bustore
 ```
 
 ## Usage
@@ -13,19 +13,19 @@ npm install --save binstore
 The following providers are built-in:
 
 ```ts
-import ProviderAbstract from 'binstore/abstract'; // The most basic abstract provider
-import ProviderAbstractFS from 'binstore/abstract-fs'; // The most basic abstract filesystem provider
-import ProviderMemory from 'binstore/memory'; // A provider that reads/writes to memory
-import ProviderFS from 'binstore/fs'; // A provider that reads/writes to the filesystem
-import ProviderIndexedDB from 'binstore/indexeddb'; // A provider that reads/writes to IndexedDB
+import ProviderAbstract from 'bustore/abstract'; // The most basic abstract provider
+import ProviderAbstractFS from 'bustore/abstract-fs'; // The most basic abstract filesystem provider
+import ProviderMemory from 'bustore/memory'; // A provider that reads/writes to memory
+import ProviderFS from 'bustore/fs'; // A provider that reads/writes to the filesystem
+import ProviderIndexedDB from 'bustore/indexeddb'; // A provider that reads/writes to IndexedDB
 ```
 
 This is how you'd use providers:
 
 ```ts
-import ProviderMemory from 'binstore/memory';
-import ProviderFS from 'binstore/fs';
-import ProviderIndexedDB from 'binstore/indexeddb';
+import ProviderMemory from 'bustore/memory';
+import ProviderFS from 'bustore/fs';
+import ProviderIndexedDB from 'bustore/indexeddb';
 
 // Let's create and manipulate a memory store
 // Memory and IndexedDB stores also support optionally storing metadata along witht the blob
