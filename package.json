@@ -1,0 +1,76 @@
+{
+  "name": "binstore",
+  "repository": "github:fabiospampinato/binstore",
+  "description": "An isomorphic asynchronous Map-inspired key-value store for persisting blobs.",
+  "version": "1.0.0",
+  "type": "module",
+  "sideEffects": false,
+  "main": "dist/providers/memory.js",
+  "exports": {
+    "./abstract": {
+      "import": "./dist/providers/abstract.js",
+      "types": "./dist/providers/abstract.d.ts"
+    },
+    "./abstract-fs": {
+      "import": "./dist/providers/abstract_fs.js",
+      "types": "./dist/providers/abstract_fs.d.ts"
+    },
+    "./fs": {
+      "import": "./dist/providers/fs.js",
+      "types": "./dist/providers/fs.d.ts"
+    },
+    "./indexeddb": {
+      "import": "./dist/providers/indexeddb.js",
+      "types": "./dist/providers/indexeddb.d.ts"
+    },
+    "./memory": {
+      "import": "./dist/providers/memory.js",
+      "types": "./dist/providers/memory.d.ts"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "abstract": [
+        "./dist/providers/abstract.d.ts"
+      ],
+      "abstract-fs": [
+        "./dist/providers/abstract_fs.d.ts"
+      ],
+      "fs": [
+        "./dist/providers/fs.d.ts"
+      ],
+      "indexeddb": [
+        "./dist/providers/indexeddb.d.ts"
+      ],
+      "memory": [
+        "./dist/providers/memory.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "clean": "tsex clean",
+    "compile": "tsex compile",
+    "compile:watch": "tsex compile --watch",
+    "test": "tsex test",
+    "test:watch": "tsex test --watch",
+    "prepublishOnly": "tsex prepare"
+  },
+  "keywords": [
+    "binary",
+    "key",
+    "value",
+    "store",
+    "isomorphic"
+  ],
+  "dependencies": {
+    "buffer2uint8": "^1.0.0",
+    "idb-keyval": "^6.2.1",
+    "uint8-encoding": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.9",
+    "fava": "^0.3.1",
+    "tsex": "^3.0.1",
+    "typescript": "^5.2.2"
+  }
+}
