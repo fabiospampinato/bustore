@@ -21,7 +21,7 @@ class ProviderIndexedDB<T> extends ProviderAbstract<T> {
 
     super ( options );
 
-    this.store = createStore ( `binstore-${options.id}`, 'objects' );
+    this.store = createStore ( `bustore-${options.id}`, 'objects' );
 
   }
 

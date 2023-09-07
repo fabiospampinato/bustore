@@ -16,7 +16,7 @@ describe ( 'FS', it => {
 
     // Instantiation
 
-    const id = `binstore-${Math.random ().toString ( 36 ).slice ( 2 )}`;
+    const id = Math.random ().toString ( 36 ).slice ( 2 );
     const targetPath = path.join ( os.tmpdir (), id );
     const options = { id, path: targetPath };
     const store = new FS ( options );

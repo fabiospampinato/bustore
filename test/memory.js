@@ -13,7 +13,7 @@ describe ( 'Memory', it => {
 
     // Instantiation
 
-    const id = `binstore-${Math.random ().toString ( 36 ).slice ( 2 )}`;
+    const id = Math.random ().toString ( 36 ).slice ( 2 );
     const options = { id };
     const store = new Memory ( options );
 

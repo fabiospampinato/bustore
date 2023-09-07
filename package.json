@@ -1,6 +1,6 @@
 {
-  "name": "binstore",
-  "repository": "github:fabiospampinato/binstore",
+  "name": "bustore",
+  "repository": "github:fabiospampinato/bustore",
   "description": "An isomorphic asynchronous Map-inspired key-value store for persisting blobs.",
   "version": "1.0.0",
   "type": "module",
