@@ -2,7 +2,7 @@
   "name": "bustore",
   "repository": "github:fabiospampinato/bustore",
   "description": "An isomorphic asynchronous Map-inspired key-value store for persisting blobs.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "sideEffects": false,
   "main": "dist/providers/memory.js",
