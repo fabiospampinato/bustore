@@ -26,6 +26,10 @@
     "./memory": {
       "import": "./dist/providers/memory.js",
       "types": "./dist/providers/memory.d.ts"
+    },
+    "./multi": {
+      "import": "./dist/providers/multi.js",
+      "types": "./dist/providers/multi.d.ts"
     }
   },
   "typesVersions": {
@@ -44,6 +48,9 @@
       ],
       "memory": [
         "./dist/providers/memory.d.ts"
+      ],
+      "multi": [
+        "./dist/providers/multi.d.ts"
       ]
     }
   },

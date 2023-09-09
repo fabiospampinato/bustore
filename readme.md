@@ -18,6 +18,7 @@ import ProviderAbstractFS from 'bustore/abstract-fs'; // The most basic abstract
 import ProviderMemory from 'bustore/memory'; // A provider that reads/writes to memory
 import ProviderFS from 'bustore/fs'; // A provider that reads/writes to the filesystem
 import ProviderIndexedDB from 'bustore/indexeddb'; // A provider that reads/writes to IndexedDB
+import ProviderMulti from 'bustore/multi'; // A higher-order provider that can read from multiple other providers
 ```
 
 This is how you'd use providers:
@@ -26,6 +27,7 @@ This is how you'd use providers:
 import ProviderMemory from 'bustore/memory';
 import ProviderFS from 'bustore/fs';
 import ProviderIndexedDB from 'bustore/indexeddb';
+import ProviderMulti from 'bustore/multi';
 
 // Let's create and manipulate a memory store
 // Memory and IndexedDB stores also support optionally storing metadata along witht the blob
@@ -67,6 +69,19 @@ const idb = new IndexedDB<Metadata> ({
 const fs = new ProviderFS ({
   id: 'my-store',
   path: '/path/to/store'
+});
+
+// Let's create a multi store
+// It can read from multiple store, and it can write to one of them
+// It doesn't support iteration APIs, since for example computing entries with multiple backends would be confusing
+
+const backend1 = new ProviderMemory ();
+const backend2 = new ProviderFS ({ path: '/path/to/store' });
+
+const multi = new ProviderMulti ({
+  id: 'my-store',
+  read: [backend1, backend2],
+  write: backend2
 });
 ```
 

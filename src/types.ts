@@ -7,6 +7,8 @@ type Dirent = {
   isFile: () => boolean
 };
 
+type Provider<T> = import ( './providers/abstract' ).default<T>;
+
 type ProviderAbstractOptions = {
   id: string
 };
@@ -20,6 +22,11 @@ type ProviderMemoryOptions = ProviderAbstractOptions;
 type ProviderFsOptions = ProviderAbstractFsOptions;
 
 type ProviderIndexedDBOptions = ProviderAbstractOptions;
+
+type ProviderMultiOptions<T> = ProviderAbstractOptions & {
+  read: Provider<T>[]
+  write: Provider<T>
+};
 
 type ValueBuffer<T = unknown> = {
   content: Uint8Array,
@@ -39,5 +46,5 @@ type Value<T = unknown> ={
 /* EXPORT */
 
 export type {Dirent};
-export type {ProviderAbstractOptions, ProviderAbstractFsOptions, ProviderMemoryOptions, ProviderFsOptions, ProviderIndexedDBOptions};
+export type {Provider, ProviderAbstractOptions, ProviderAbstractFsOptions, ProviderMemoryOptions, ProviderFsOptions, ProviderIndexedDBOptions, ProviderMultiOptions};
 export type {ValueBuffer, ValueString, Value};
