@@ -59,17 +59,7 @@ describe ( 'Muti', it => {
 
     // Invalid name
 
-    try {
-
-      new Multi ( '👍' );
-
-      t.fail ();
-
-    } catch {
-
-      t.pass ();
-
-    }
+    t.throws ( () => new Multi ({ id: '👍' }), { message: 'Invalid store id: "👍"' } );
 
   });
 

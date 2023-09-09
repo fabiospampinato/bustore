@@ -79,17 +79,7 @@ describe ( 'FS', it => {
 
     // Invalid name
 
-    try {
-
-      new FS ( '👍' );
-
-      t.fail ();
-
-    } catch {
-
-      t.pass ();
-
-    }
+    t.throws ( () => new FS ({ id: '👍' }), { message: 'Invalid store id: "👍"' } );
 
   });
 

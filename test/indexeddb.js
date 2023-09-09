@@ -71,17 +71,7 @@ describe.skip ( 'IndexedDB', it => {
 
     // Invalid name
 
-    try {
-
-      new IndexedDB ( '👍' );
-
-      t.fail ();
-
-    } catch {
-
-      t.pass ();
-
-    }
+    t.throws ( () => new IndexedDB ({ id: '👍' }), { message: 'Invalid store id: "👍"' } );
 
   });
 

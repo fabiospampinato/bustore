@@ -69,17 +69,7 @@ describe ( 'Memory', it => {
 
     // Invalid name
 
-    try {
-
-      new Memory ( '👍' );
-
-      t.fail ();
-
-    } catch {
-
-      t.pass ();
-
-    }
+    t.throws ( () => new Memory ({ id: '👍' }), { message: 'Invalid store id: "👍"' } );
 
   });
 
